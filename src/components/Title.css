@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+
+.Title {
+  text-align: center;
+  background-color: #ff5b0082;
+  font-family: "Indie Flower", cursive;
+  border-radius: 15px;
+  color: white;
+  width: 95%;
+  margin: 20px, 0px;
+  
+}

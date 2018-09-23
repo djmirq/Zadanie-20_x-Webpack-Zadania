@@ -1,0 +1,81 @@
+.column {
+  width: calc(33.33% - 10px);
+  min-width: 100px;
+  border-left: 6px solid #cccccc;
+  background: #e4b5000d;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.columnTitle {
+  border-bottom: 1px solid #cccccc;
+  padding-left: 10px;
+  margin-top: 0;
+}
+
+.tooltiptext {
+  margin-top: 8px;
+  margin-left: 10px;
+  font-size: 10px;
+  visibility: hidden;
+  width: 60px;
+  background-color: #ff000054;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px 0; /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+h2:hover {
+  cursor: pointer;
+}
+
+h2:hover .tooltiptext {
+  visibility: visible;
+}
+
+.columnButtons {
+  background-color: rgb(251, 233, 151);
+  padding-left: 5px;
+  padding-right: 5px;
+  width: calc(100% - 4px);
+  margin-left: 2px;
+  margin-bottom: 7px;
+  border-radius: 10px;
+}
+
+.columnAddCard {
+  background-color: rgba(0, 255, 255, 0);
+  border: none;
+  font-weight: bolder;
+}
+
+.columnAddCard:hover {
+  cursor: pointer;
+  color: #0c7b35;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+.columnBtnDelete:hover {
+  cursor: pointer;
+  color: #b30a0a;
+  transform: scale(2);
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+}
+
+.columnBtnDelete {
+  background-color: rgba(0, 255, 255, 0);
+  color: #b30a0a;
+  border: none;
+  float: right;
+}

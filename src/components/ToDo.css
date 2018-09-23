@@ -1,0 +1,23 @@
+.TodoDeleteButton {
+  background-color: rgba(0, 255, 255, 0);
+  border: none;
+  float: right;
+}
+
+.TodoDeleteButton:hover {
+  cursor: pointer;
+  color: #b30a0a;
+  transform: scale(2);
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+}
+
+.TodoItem {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: RGB(239, 239, 239);
+}

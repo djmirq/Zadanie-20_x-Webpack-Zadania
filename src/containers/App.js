@@ -3,7 +3,7 @@ import uuid from "uuid";
 import style from "./App.css";
 import { hot } from "react-hot-loader";
 import Title from "../components/Title";
-import TodoList from "../components/TodoList";
+import TodoForm from "../components/TodoForm";
 
 class App extends Component {
   constructor(props) {
@@ -12,26 +12,47 @@ class App extends Component {
       data: [
         {
           id: 1,
+          idCard: 1,
           text: "clean room"
         },
         {
           id: 2,
+          idCard: 1,
           text: "wash the dishes"
         },
         {
           id: 3,
+          idCard: 1,
           text: "feed my cat"
+        },
+        {
+          id: 4,
+          idCard: 2,
+          text: "go to sleep"
+        }
+      ],
+      data2: [
+        {
+          id: 1,
+          title: "To Do"
+        },
+        {
+          id: 2,
+          title: "Doing"
         }
       ]
     };
   }
-  addTodo(val) {
+  addTodo(idCard) {
     const todo = {
-      text: val,
+      text: prompt("Enter the name of the card"),
+      idCard,
       id: uuid.v4()
     };
-    const data = [...this.state.data, todo];
-    this.setState({ data });
+    if (todo.text.length > 0) {
+      const data = [...this.state.data, todo];
+      this.setState({ data });
+    }
   }
 
   removeTodo(id) {
@@ -42,8 +63,15 @@ class App extends Component {
   render() {
     return (
       <div className={style.TodoApp}>
-        <Title title={this.state.data.length} />
-        <TodoList lista={this.state.data} removeTodo={this.removeTodo.bind(this)} />
+        <Title title={this.state.data.filter(tab => tab.idCard == 1).length} />
+        <div className={style.columnContainer}>
+          <TodoForm
+            todoItems={this.state.data}
+            todoColumns={this.state.data2}
+            removeTodo={this.removeTodo.bind(this)}
+            addTodo={this.addTodo.bind(this)}
+          />
+        </div>
       </div>
     );
   }

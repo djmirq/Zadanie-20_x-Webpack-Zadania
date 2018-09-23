@@ -1,20 +1,20 @@
 import React, { Component } from "react";
-import style from "./TodoList.css";
+import { hot } from "react-hot-loader";
+import Todo from "../components/Todo";
 
 const TodoList = props =>
-  props.lista.map(tab => (
-    <div className={style.TodoItem} key={tab.id}>
-      {tab.text}
-      <button
-        className={style.TodoDeleteButton}
-        key={tab.id}
-        onClick={() => props.removeTodo(tab.id)}
-      >
-        x
-      </button>
-    </div>
+  props.todoItems.filter(tab => tab.idCard == props.idCard).map(tab => (
+    <Todo tab={tab} removeTodo={props.removeTodo.bind(this)} />
+    // <div className={style.TodoItem} key={tab.id}>
+    //   {tab.text}
+    //   <button
+    //     className={style.TodoDeleteButton}
+    //     key={tab.id}
+    //     onClick={() => props.removeTodo(tab.id)}
+    //   >
+    //     x
+    //   </button>
+    // </div>
   ));
 
-// <h1>{props.lista[0].id.toString()}</h1>;
-
-export default TodoList;
+export default hot(module)(TodoList);
