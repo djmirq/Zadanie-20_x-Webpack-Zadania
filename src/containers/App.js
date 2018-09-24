@@ -3,7 +3,6 @@ import uuid from "uuid";
 import style from "./App.css";
 import { hot } from "react-hot-loader";
 import Title from "../components/Title";
-import TodoForm from "../components/TodoForm";
 
 class App extends Component {
   constructor(props) {
@@ -65,12 +64,14 @@ class App extends Component {
       <div className={style.TodoApp}>
         <Title title={this.state.data.filter(tab => tab.idCard == 1).length} />
         <div className={style.columnContainer}>
-          <TodoForm
-            todoItems={this.state.data}
-            todoColumns={this.state.data2}
-            removeTodo={this.removeTodo.bind(this)}
-            addTodo={this.addTodo.bind(this)}
-          />
+          {import("../components/todoform.js").then(TodoForm => (
+            <TodoForm
+              todoItems={this.state.data}
+              todoColumns={this.state.data2}
+              removeTodo={this.removeTodo.bind(this)}
+              addTodo={this.addTodo.bind(this)}
+            />
+          ))}
         </div>
       </div>
     );

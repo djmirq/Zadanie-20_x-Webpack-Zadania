@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./TodoForm.css";
 import TodoList from "../components/TodoList";
-import { hot } from "react-hot-loader";
 
 const TodoForm = props =>
   props.todoColumns.map(tab => (
@@ -27,4 +26,4 @@ const TodoForm = props =>
     </div>
   ));
 
-export default hot(module)(TodoForm);
+export default TodoForm;

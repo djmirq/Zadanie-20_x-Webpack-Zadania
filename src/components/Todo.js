@@ -1,5 +1,4 @@
 import React from "react";
-import { hot } from "react-hot-loader";
 import style from "./Todo.css";
 
 const Todo = props => (
@@ -15,4 +14,4 @@ const Todo = props => (
   </div>
 );
 
-export default hot(module)(Todo);
+export default Todo;

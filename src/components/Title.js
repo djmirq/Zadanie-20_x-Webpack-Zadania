@@ -1,13 +1,12 @@
 import React from "react";
 import style from "./Title.css";
-import { hot } from "react-hot-loader";
 import { Helmet } from "react-helmet";
 
 const Title = props => (
   <h1 className={style.Title}>Tablica Kanban: {props.title.toString()}</h1>
 );
 
-export default hot(module)(Title);
+export default Title;
 
 // class Application extends React.Component {
 //   constructor(props) {
